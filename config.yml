@@ -1,0 +1,27 @@
+kind: brakeman
+name: Brakeman
+description: Comments on known security vulnerabilities in your pull requests.
+discovers: security vulnerability
+checkout: patch
+author: 
+  name: Luke Roberts
+  email: awsmsrc@gmail.com
+repository:
+  type: git
+  url: https://github.com/pushbit-behaviors/rubocop
+tone: negative
+active: true
+tags:
+  - Ruby
+files: 
+  - !ruby/regexp '/.+\.rb\z/i'
+triggers:
+  - task_completed_unbox
+  - pull_request_opened
+actions:
+  - line_comment
+  - issue
+keywords:
+  - brakeman
+  - security
+  - vulnerability
