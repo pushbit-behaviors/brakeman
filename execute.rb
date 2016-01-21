@@ -6,9 +6,6 @@ discoveries = []
 changed_files = ENV.fetch("CHANGED_FILES").split(' ')
 brakeman_results = JSON.parse(ARGF.read)["warnings"]
 
-puts "CHANGED_FILES: #{changed_files.inspect}"
-puts "RAW BRAKEMAN: #{brakeman_results.inspect}"
-
 if changed_files.length > 0
   brakeman_results = brakeman_results.select do |result|
     changed_files.include? result['file']
