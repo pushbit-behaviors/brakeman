@@ -6,4 +6,4 @@ RUN gem install faraday
 ADD ./execute.sh ./execute.sh
 ADD ./execute.rb ./execute.rb
 
-CMD ['./execute.sh']
+CMD ["./execute.sh"]
